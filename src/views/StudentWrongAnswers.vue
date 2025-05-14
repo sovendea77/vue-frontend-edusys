@@ -214,7 +214,9 @@
             <div v-if="wrongAnswer.aiAnalysisResult" class="ai-analysis-result">
               <el-card class="ai-result-card">
                 <div class="ai-result-content" style="white-space: pre-wrap">
-                  {{ wrongAnswer.aiAnalysisResult }}
+                  <MarkDown
+                    v-model:value="wrongAnswer.aiAnalysisResult"
+                  ></MarkDown>
                 </div>
               </el-card>
             </div>
@@ -354,6 +356,7 @@ import { studentApi } from "../api/student";
 import { aiApi } from "../api/ai";
 import { ElMessage, ElMessageBox } from "element-plus";
 import { ArrowLeft, Edit, User, Opportunity } from "@element-plus/icons-vue";
+import MarkDown from "@/components/MarkDown.vue";
 
 // 路由相关
 const router = useRouter();

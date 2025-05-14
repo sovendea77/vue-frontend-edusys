@@ -76,9 +76,7 @@
               <span>AI分析结果</span>
             </div>
           </template>
-          <div class="ai-result-content" style="white-space: pre-wrap">
-            {{ formattedAIResult }}
-          </div>
+          <MarkDown v-model:value="formattedAIResult"></MarkDown>
         </el-card>
       </div>
 
@@ -89,6 +87,7 @@
         style="width: 100%"
         :default-sort="{ prop: 'error_count', order: 'descending' }"
       >
+        <MarkDown v-model:value="wrongAnswersAnalysis"></MarkDown>
         <el-table-column label="题号" width="120" align="center">
           <template #default="scope">
             <span
@@ -131,6 +130,7 @@ import { Search, Opportunity } from "@element-plus/icons-vue";
 import { ElMessage } from "element-plus";
 import { studentApi } from "../api/student";
 import { aiApi } from "../api/ai";
+import MarkDown from "@/components/MarkDown.vue";
 
 // 响应式状态
 const examId = ref("");

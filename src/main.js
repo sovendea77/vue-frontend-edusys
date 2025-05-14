@@ -3,6 +3,8 @@ import { createPinia } from "pinia";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
 import * as ElementPlusIconsVue from "@element-plus/icons-vue";
+import "@/utils/MathJax";
+import "mathjax/es5/tex-svg";
 import {
   Setting,
   HomeFilled,
