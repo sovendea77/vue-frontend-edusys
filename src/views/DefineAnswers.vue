@@ -72,7 +72,7 @@
                 </el-select>
 
                 <el-button
-                  type="text"
+                  text
                   :icon="Delete"
                   @click="deleteQuestion(section, qIndex)"
                   class="delete-question-btn"
@@ -86,7 +86,7 @@
 
               <div class="add-question" v-if="!answersSaved">
                 <el-button
-                  type="text"
+                  text
                   :icon="Plus"
                   @click="addQuestion(section)"
                   class="add-question-btn"
@@ -96,7 +96,7 @@
 
             <div class="section-footer">
               <el-button
-                type="text"
+                text
                 :icon="Delete"
                 @click="deleteSection(sectionIndex)"
                 class="delete-section-btn"
@@ -123,7 +123,7 @@
 
       <!-- 自动填充提示 -->
       <div class="auto-fill-tip" v-if="!answersSaved">
-        <el-button type="text" :size="'small'" @click="showUploadDialog"
+        <el-button text :size="'small'" @click="showUploadDialog"
           >自己填太慢? 试试上传扫描件让AI生成答案</el-button
         >
       </div>

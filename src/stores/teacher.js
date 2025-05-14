@@ -16,6 +16,7 @@ export const useTeacherStore = defineStore("teachers", {
     async getTeacherList() {
       try {
         const response = await teacherApi.getTeachers();
+        console.log(response);
         // 确保response.data.data存在且是数组
         const teachers =
           response && response.data && Array.isArray(response.data)

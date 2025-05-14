@@ -1342,6 +1342,7 @@ const updateExamStatistics = () => {
     .then((response) => {
       if (response.success) {
         Object.assign(examStatistics, response.data);
+        getExamStatistics();
         // 如果没有学生记录，清空统计信息
         if (!studentList.value || studentList.value.length === 0) {
           examStatistics.studentCount = 0;
